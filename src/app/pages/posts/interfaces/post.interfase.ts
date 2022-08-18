@@ -1,5 +1,4 @@
-
-export interface Petition
+export interface Post
 {
     userId:number;
     id: number;

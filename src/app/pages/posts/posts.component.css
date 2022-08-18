@@ -1,0 +1,14 @@
+.posts
+{
+    justify-content: center;
+    align-items: center;
+}
+
+.table
+{
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+}

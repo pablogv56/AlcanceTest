@@ -1,7 +1,5 @@
-
-<div class="petitions">
-    <h1>Peticiones</h1>
-    <table mat-table [dataSource]="petitions">
+<div class="posts">
+    <table mat-table [dataSource]="posts" class="table">
         <ng-container matColumnDef="id">
             <th mat-header-cell *matHeaderCellDef> ID </th>
             <td mat-cell *matCellDef="let element"> {{element.id}} </td>

@@ -1,0 +1,17 @@
+.card {
+    margin: 5px;
+    min-height: 180px;
+    min-width: 400px;
+    max-width: 400px;
+    height: 100%;
+  }
+  
+  .header-image {
+  background-image: url('https://p4s.co/img/index/mp-emplogo-30-1597431853702.jpg');
+  background-size: cover;
+  }
+  
+  button
+  {
+    width: 100%;
+  }
