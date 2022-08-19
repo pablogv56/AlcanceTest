@@ -1,1 +1,30 @@
+<div class="tableFilter">
 
+    <mat-form-field appearance="standard" class="filter">
+        <mat-label>Buscar Usuario</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ingrese un Id" #input>
+      </mat-form-field>
+      
+    <table mat-table [dataSource]="albums" class="mat-elevation-z8">
+    
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+        <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef> Title </th>
+            <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+        </ng-container>
+        <ng-container matColumnDef="userId">
+            <th mat-header-cell *matHeaderCellDef> UserID </th>
+            <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+        <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No existe un User Id "{{input.value}}"</td>
+        </tr>
+    </table>
+</div>
