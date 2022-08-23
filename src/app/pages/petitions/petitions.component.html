@@ -1,0 +1,43 @@
+<div class="tableAlbums">
+    <button mat-raised-button class="add-data-button">Agregar petición</button>
+    <table mat-table [dataSource]="petitions" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+        <ng-container matColumnDef="fecha">
+            <th mat-header-cell *matHeaderCellDef> Fecha </th>
+            <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+        </ng-container>
+        <ng-container matColumnDef="metodoConsultado">
+            <th mat-header-cell *matHeaderCellDef> Metodo </th>
+            <td mat-cell *matCellDef="let element"> {{element.metodoConsultado}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="datos">
+            <th mat-header-cell *matHeaderCellDef> Datos </th>
+            <td mat-cell *matCellDef="let element"> {{element.datos.substring(0,50)}} ... </td>
+        </ng-container>
+
+        <ng-container matColumnDef="options">
+            <th mat-header-cell *matHeaderCellDef>Options</th>
+            <td mat-cell *matCellDef="let element">
+                <div class="buttons">
+                    <div class="button-container">
+                        <button mat-fab color="primary" (click)="editClick(element.id)">
+                          <mat-icon>library_books</mat-icon>
+                        </button>
+                    </div>
+                    <div class="button-container">
+                        <button mat-fab color="warn" (click)="deleteClick(element)">
+                          <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

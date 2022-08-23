@@ -13,7 +13,7 @@ export class UsersService {
 
   constructor(private http:HttpClient) { }
   
-  getPetitions():Observable<User[]>
+  getUsers():Observable<User[]>
   {
     return this.http.get<User[]>(this.apiURL);
   }

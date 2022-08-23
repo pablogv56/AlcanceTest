@@ -1,0 +1,26 @@
+<div class="container">
+  <form name="edit-form" class="edit-form">
+    <mat-form-field appearance="fill">
+      <mat-label>Fecha</mat-label>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="model.fecha" name="fecha">
+      <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
+      <mat-datepicker #picker ></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Método</mat-label>
+        <mat-select [(ngModel)]="model.metodoConsulado" name="listMetodo" (selectionChange)="metodoChangeAction(model.metodoConsulado)">
+          <mat-option *ngFor="let option of options" [value]="option.id">{{option.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Datos</mat-label>
+      <textarea matInput disabled="disabled" name="datos" [value]="model.datos"></textarea>
+    </mat-form-field>
+    <div class="buttons">
+      <button mat-raised-button color="primary" (click)="editPetition()" class="btn">Editar</button>
+      <button mat-raised-button class="btn" routerLink="/petitions" >Volver</button>
+    </div>
+  </form>
+  
+  <!-- https://www.concretepage.com/angular-material/angular-material-select-getting-setting-value -->
+</div>

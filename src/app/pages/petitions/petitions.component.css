@@ -1,0 +1,28 @@
+table {
+    width: 100%;
+}
+  
+.mat-form-field {
+    font-size: 14px;
+    width: 60%;
+}
+
+.tableAlbums
+{
+    margin: 20px;
+}
+
+.buttons
+{
+    display: flex;
+}
+
+.button-container
+{
+    margin-left: 20px;
+}
+
+.add-data-button
+{
+    margin: 20px;
+}

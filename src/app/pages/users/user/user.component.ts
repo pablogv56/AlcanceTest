@@ -16,4 +16,9 @@ export class UserComponent{
   {
     this.router.navigate(['/posts']);
   }
+
+  goToPosts(id:number)
+  {
+    this.router.navigateByUrl('/posts/'+id);
+  }
 }

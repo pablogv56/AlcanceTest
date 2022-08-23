@@ -15,4 +15,9 @@ export class PostService {
   {
     return this.http.get<Post[]>(this.apiURL);
   }
+
+  getPost(userId:string):Observable<Post[]>
+  {
+    return this.http.get<Post[]>(this.apiURL+'?userId='+userId);
+  }
 }
